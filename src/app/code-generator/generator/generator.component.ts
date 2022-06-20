@@ -6,18 +6,15 @@ import {Component} from '@angular/core';
   styleUrls: ['./generator.component.css']
 })
 export class GeneratorComponent {
-  number: number = 0;
+  number: number = 1;
 
   constructor() {
   }
 
-
-  public generateCode() {
-    console.log("the number ist")
-    console.log(this.number)
-    const a = Math.random().toString(16).substring(2, 8);
-    console.log(a)
+  public generateCode(times: number) {
+    for (let i = 0; i < times; i++) {
+      const a = Math.random().toString(16).substring(2, 7);
+      console.log(a.toUpperCase())
+    }
   }
-
-
 }
