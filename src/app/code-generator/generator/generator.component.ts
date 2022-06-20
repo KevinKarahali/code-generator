@@ -7,7 +7,9 @@ import {GeneratorService} from "../services/generator.service";
   styleUrls: ['./generator.component.css']
 })
 export class GeneratorComponent {
-  public number: number = 4;
+
+  public number: number = 1;
+
 
   constructor(private generatorService: GeneratorService) {
   }
@@ -19,5 +21,9 @@ export class GeneratorComponent {
       code.unshift(single)
     }
     this.generatorService.addCodes(code)
+  }
+
+  public getNumber($event: number) {
+    this.number = $event
   }
 }

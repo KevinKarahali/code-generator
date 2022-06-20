@@ -9,8 +9,8 @@
 
   <div class="container-generator">
     <p>Wählen Sie hier die Anzahl der Codes die Sie generieren möchten.</p>
-    <app-counter></app-counter>
-    <input type="number" [(ngModel)]="number" min="4">
+    <app-counter (onNewNumber)="getNumber($event)"></app-counter>
+    <!--    <input type="number" [(ngModel)]="number" min="4">-->
     <button (click)="generateCode(number)">Generieren</button>
   </div>
 </div>
