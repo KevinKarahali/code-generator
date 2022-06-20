@@ -1,11 +1,12 @@
-.nabvar-menu {
-  box-shadow: 0 2px 0 0 #f5f5f5;
+.navbar-menu {
+  box-shadow: 1px 1px 8px -1px rgba(0, 0, 0, 0.59);
   min-height: 3.1rem;
   background-color: #181818;
-  margin-bottom: 20px;
+  margin-bottom: 4rem;
 }
 
 .logo {
-  max-width: 8%;
-  background: #181818;
+  margin: 0.2rem 0 0.2rem 1rem;
+
+  max-width: 6%;
 }
