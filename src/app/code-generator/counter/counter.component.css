@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container button, p {
+  /*background-color: #cbcbcb;*/
+  background-color: #eeeeee;
+  border: none;
+  cursor: pointer;
+  margin: 0.1rem;
+  padding: 0.5rem 0.7rem 0.5rem;
+  color: black;
+}
+
+.container p {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  cursor: default;
+}
