@@ -17,8 +17,9 @@ export class GeneratorComponent {
   public generateCode(times: number): void {
     let code: string[] = []
     for (let i = 0; i < times; i++) {
-      let single = Math.random().toString(16).substring(2, 7).toUpperCase();
-      code.unshift(single)
+      // let singleCode = Math.random().toString(16).substring(2, 7).toUpperCase();
+      let singleCode = Math.random().toString(30).substring(2, 7).toUpperCase();
+      code.unshift(singleCode)
     }
     this.generatorService.addCodes(code)
   }
