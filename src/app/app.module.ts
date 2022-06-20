@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {CodeGeneratorModule} from "./code-generator/code-generator.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -12,9 +13,11 @@ import {CodeGeneratorModule} from "./code-generator/code-generator.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CodeGeneratorModule
+    CodeGeneratorModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
