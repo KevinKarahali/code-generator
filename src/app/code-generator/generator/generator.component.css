@@ -1,6 +1,13 @@
-h2 {
-  font-size: 2rem;
-  padding-bottom: 1rem;
+.container {
+  text-align: center;
+}
+
+.container-info {
+  margin-bottom: 4rem;
+}
+
+.container p {
+  margin-bottom: 0.5rem;
 }
 
 .blue-text {
@@ -8,17 +15,31 @@ h2 {
   color: #267ff4;
 }
 
-button {
+.container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.container-generator {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+
+.container-generator button {
   background-color: #267ff4;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.9rem 2rem;
+  padding: 0.9rem 5rem;
   margin-top: 2rem;
   color: white;
   font-size: 1rem;
 }
 
-.container {
-  display: flex;
-  flex-flow: column;
+.container-generator p {
+  font-size: 0.9rem;
+  color: gray;
 }
+

@@ -1,7 +1,15 @@
-<h2>Generieren SIe hier Ihre </h2>
-<h2 class="blue-text">Gutscheincodes.</h2>
 <div class="container">
-  <input type="number" [(ngModel)]="number" min="4">
-  <button (click)="generateCode(number)">Generieren</button>
-</div>
+  <div class="container-info">
+    <h2>Generieren Sie hier Ihre </h2>
+    <h2 class="blue-text">Gutscheincodes.</h2>
+    <p>Die codes bestehen 5 Ziffern, sie werden aus Großbuchstaben und Zahlen generiert.</p>
+    <p>Jeder Code kann nur einmalig generiert werden.</p>
+  </div>
 
+
+  <div class="container-generator">
+    <p>Wählen Sie hier die Anzahl der Codes die Sie generieren möchten.</p>
+    <input type="number" [(ngModel)]="number" min="4">
+    <button (click)="generateCode(number)">Generieren</button>
+  </div>
+</div>
