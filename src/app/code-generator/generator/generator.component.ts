@@ -8,23 +8,17 @@ import {GeneratorService} from "../services/generator.service";
 })
 export class GeneratorComponent {
 
-  public number: number = 1;
-
+  public numberOfCodes: number = 1;
 
   constructor(private generatorService: GeneratorService) {
   }
 
-  public generateCode(times: number): void {
-    let code: string[] = []
-    for (let i = 0; i < times; i++) {
-      // let singleCode = Math.random().toString(16).substring(2, 7).toUpperCase();
-      let singleCode = Math.random().toString(30).substring(2, 7).toUpperCase();
-      code.unshift(singleCode)
-    }
-    this.generatorService.addCodes(code)
+  public getNumber($event: number) {
+    this.numberOfCodes = $event
   }
 
-  public getNumber($event: number) {
-    this.number = $event
+  public generateCode(numberOfCodes: number): void {
+    this.generatorService.generateCode(numberOfCodes)
   }
+
 }
