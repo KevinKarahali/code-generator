@@ -1,3 +1,9 @@
+* {
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+
 .container {
   display: flex;
   flex-direction: column;

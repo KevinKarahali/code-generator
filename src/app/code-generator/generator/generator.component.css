@@ -1,0 +1,24 @@
+h2 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.blue-text {
+  font-weight: bold;
+  color: #267ff4;
+}
+
+button {
+  background-color: #267ff4;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.9rem 2rem;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+}

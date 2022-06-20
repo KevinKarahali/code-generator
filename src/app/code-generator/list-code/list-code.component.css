@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  padding: 1rem 3rem;
+  background-color: whitesmoke;
+  margin: 1rem;
+}
+
+.text {
+
+  margin-right: 15rem;
+}
+
+
+/*flex-direction*/
+/*flex-wrap*/
+/*flex-flow*/
+/*justify-content*/
+/*align-items*/
+/*align-content*/
