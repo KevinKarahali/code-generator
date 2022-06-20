@@ -7,7 +7,7 @@ import {GeneratorService} from "../services/generator.service";
   styleUrls: ['./generator.component.css']
 })
 export class GeneratorComponent {
-  number: number = 4;
+  public number: number = 4;
 
   constructor(private generatorService: GeneratorService) {
   }
