@@ -38,7 +38,7 @@ export class GeneratorService {
       }
       arrayCode.push(code.join(''))
     }
-    this.addCodes(arrayCode)
+    this.addCodes([...new Set(arrayCode)])
   }
 
   private addCodes(code: string[]): void {
