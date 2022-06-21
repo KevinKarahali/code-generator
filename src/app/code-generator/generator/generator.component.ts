@@ -21,4 +21,8 @@ export class GeneratorComponent {
     this.generatorService.generateCode(numberOfCodes)
   }
 
+  public generateCode2(timeOfCode: number, characterAmount: number, includeUppercase: boolean, includeNumbers: boolean) {
+    this.generatorService.generateCode2(timeOfCode, characterAmount, includeUppercase, includeNumbers)
+  }
+
 }
