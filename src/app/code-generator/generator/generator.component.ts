@@ -22,8 +22,8 @@ export class GeneratorComponent {
     this.lengthCode = $event
   }
 
-  public generateCode(numberOfCodes: number, characterAmount: number, includeUppercase: boolean, includeNumbers: boolean) {
-    this.generatorService.generateCode(numberOfCodes, characterAmount, includeUppercase, includeNumbers)
+  public generateCode(numberOfCodes: number, characterAmount: number) {
+    this.generatorService.generateCode(numberOfCodes, characterAmount)
   }
 
 }

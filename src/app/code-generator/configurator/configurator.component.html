@@ -1,37 +1,17 @@
 <div class="container">
+
   <div class="colum1">
-
-    <div class="onlyNumbers">
-      <input type="radio" name="1" id="onlyNumbers">
-      <label for="onlyNumbers">Nur Zahlen.</label>
-    </div>
-
-    <div class="onlyCharacters">
-      <input type="radio" name="1" id="onlyCharacters">
-      <label for="onlyCharacters">Nur Buchstaben.</label>
-    </div>
-
-    <div class="numbersAndCharacters">
-      <input type="radio" name="1" id="numbersAndCharacters">
-      <label for="numbersAndCharacters">Zahlen und Buchstaben.</label>
+    <div *ngFor="let value of config1; let index = index;" class="configElement">
+      <input type="radio" name="config1" value="{{index}}" (change)="config1ChangeHandler($event)"><i>{{value}}</i>
     </div>
   </div>
 
   <div class="colum2">
-    <div class="onlyBigCharacters">
-      <input type="radio" name="2" id="onlyBigCharacters">
-      <label for="onlyBigCharacters">Nur Großbuchstaben.</label>
-    </div>
-
-    <div class="onlySmallCharacters">
-      <input type="radio" name="2" id="onlySmallCharacters">
-      <label for="numbersAndCharacters">Nur Kleinbuchstaben.</label>
-    </div>
-
-    <div class="bigAndSmallCharacters">
-      <input type="radio" name="2" id="bigAndSmallCharacters">
-      <label for="numbersAndCharacters">Groß und Kleinbuchstaben.</label>
+    <div *ngFor="let value of config2; let index = index;" class="configElement">
+      <input type="radio" name="config1" value="{{index}}" (change)="config2ChangeHandler($event)"><i>{{value}}</i>
     </div>
   </div>
 
 </div>
+<h2>result1 : {{settings1}}</h2>
+<h2>result2 : {{settings2}}</h2>

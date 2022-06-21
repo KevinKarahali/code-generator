@@ -9,6 +9,8 @@ export class GeneratorService {
   private readonly UpperCase_Char: number[]
   private readonly LowerCase_Char: number[]
   private readonly Number_Char: number[]
+  public settings1: string = ''
+  public settings2: string = ''
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 90)
@@ -24,10 +26,13 @@ export class GeneratorService {
     return array
   }
 
-  public generateCode(numberOfCodes: number, characterAmount: number, includeUppercase: boolean, includeNumbers: boolean) {
+  public generateCode(numberOfCodes: number, characterAmount: number) {
     let charCode = this.LowerCase_Char
-    if (includeUppercase) charCode = charCode.concat(this.UpperCase_Char)
-    if (includeNumbers) charCode = charCode.concat(this.Number_Char)
+    if (this.settings1 == "0") charCode = this.Number_Char
+    if (this.settings1 == "1") charCode = this.LowerCase_Char.concat(this.UpperCase_Char)
+    if (this.settings1 == "2") charCode = this.Number_Char.concat(this.UpperCase_Char).concat(this.LowerCase_Char)
+    // if (includeUppercase) charCode = charCode.concat(this.UpperCase_Char)
+    // if (includeNumbers) charCode = charCode.concat(this.Number_Char)
 
     let arrayCode: string[] = []
     for (let i = 0; i < numberOfCodes; i++) {
@@ -38,12 +43,14 @@ export class GeneratorService {
       }
       arrayCode.push(code.join(''))
     }
-    this.addCodes([...new Set(arrayCode)])
+    this.addCodes(arrayCode)
   }
 
   private addCodes(code: string[]): void {
-    this._codes = code
+    this._codes = [...new Set(code)]
     console.log(this._codes)
+
+    // [...new Set(arrayCode)]
   }
 
   public get codes(): string[] {
