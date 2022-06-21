@@ -6,7 +6,6 @@ import {Injectable} from '@angular/core';
 export class GeneratorService {
 
   private _codes: string[] = []
-
   private readonly UpperCase_Char: number[]
   private readonly LowerCase_Char: number[]
   private readonly Number_Char: number[]
@@ -25,13 +24,7 @@ export class GeneratorService {
     return array
   }
 
-
-  private addCodes(code: string[]): void {
-    this._codes = code
-    console.log(this._codes)
-  }
-
-  public generateCode2(numberOfCodes: number, characterAmount: number, includeUppercase: boolean, includeNumbers: boolean) {
+  public generateCode(numberOfCodes: number, characterAmount: number, includeUppercase: boolean, includeNumbers: boolean) {
     let charCode = this.LowerCase_Char
     if (includeUppercase) charCode = charCode.concat(this.UpperCase_Char)
     if (includeNumbers) charCode = charCode.concat(this.Number_Char)
@@ -48,14 +41,9 @@ export class GeneratorService {
     this.addCodes(arrayCode)
   }
 
-  public generateCode(numberOfCodes: number) {
-    let code: string[] = []
-    for (let i = 0; i < numberOfCodes; i++) {
-      // let singleCode = Math.random().toString(16).substring(2, 7).toUpperCase();
-      let singleCode = Math.random().toString(36).substring(2, 7).toUpperCase();
-      code.unshift(singleCode)
-    }
-    this.addCodes(code)
+  private addCodes(code: string[]): void {
+    this._codes = code
+    console.log(this._codes)
   }
 
   public get codes(): string[] {
