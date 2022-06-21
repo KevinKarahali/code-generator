@@ -8,7 +8,7 @@ import {GeneratorService} from "../services/generator.service";
 })
 export class GeneratorComponent {
 
-  public numberOfCodes: number = 1;
+  public numberOfCodes: number = 5;
   public lengthCode: number = 5;
 
   constructor(private generatorService: GeneratorService) {
