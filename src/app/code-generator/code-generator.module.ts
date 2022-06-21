@@ -4,13 +4,15 @@ import {GeneratorComponent} from './generator/generator.component';
 import {FormsModule} from "@angular/forms";
 import {ListCodeComponent} from './list-code/list-code.component';
 import { CounterComponent } from './counter/counter.component';
+import { ConfiguratorComponent } from './configurator/configurator.component';
 
 
 @NgModule({
   declarations: [
     GeneratorComponent,
     ListCodeComponent,
-    CounterComponent
+    CounterComponent,
+    ConfiguratorComponent
   ],
   exports: [
     GeneratorComponent,
