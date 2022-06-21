@@ -7,7 +7,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class CounterComponent {
 
-  public number: number = 1;
+  public number: number = 5;
 
   @Output()
   public onNewNumber: EventEmitter<number> = new EventEmitter<number>()

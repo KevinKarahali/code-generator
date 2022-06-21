@@ -12,8 +12,8 @@
     <app-counter (onNewNumber)="getNumber($event)"></app-counter>
     <h3>Konfigurieren Sie Ihren Code</h3>
     <p>Wählen Sie hier die Länge des Codes.</p>
-    <app-counter></app-counter>
+    <app-counter (onNewNumber)="getLength($event)"></app-counter>
     <app-configurator></app-configurator>
-    <button (click)="generateCode(numberOfCodes,5,true,true)">Generieren</button>
+    <button (click)="generateCode(numberOfCodes,lengthCode,true,true)">Generieren</button>
   </div>
 </div>

@@ -9,12 +9,17 @@ import {GeneratorService} from "../services/generator.service";
 export class GeneratorComponent {
 
   public numberOfCodes: number = 1;
+  public lengthCode: number = 5;
 
   constructor(private generatorService: GeneratorService) {
   }
 
   public getNumber($event: number) {
     this.numberOfCodes = $event
+  }
+
+  getLength($event: number) {
+    this.lengthCode = $event
   }
 
   public generateCode(timeOfCode: number, characterAmount: number, includeUppercase: boolean, includeNumbers: boolean) {
