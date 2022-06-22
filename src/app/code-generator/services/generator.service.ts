@@ -11,9 +11,8 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  //pare realizar
-  // public numberOfCodes: number = 2
-  // public lengthCode: number = 5
+  public numberOfCodes: number = 2
+  public lengthCode: number = 5
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 90)

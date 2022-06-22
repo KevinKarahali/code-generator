@@ -8,10 +8,12 @@ import {GeneratorService} from "../services/generator.service";
 })
 export class GeneratorComponent {
 
-  public numberOfCodes: number = 50;
-  public lengthCode: number = 1;
+  public numberOfCodes: number;
+  public lengthCode: number;
 
   constructor(private generatorService: GeneratorService) {
+    this.numberOfCodes = generatorService.numberOfCodes
+    this.lengthCode = generatorService.lengthCode
   }
 
   public getNumber($event: number) {
