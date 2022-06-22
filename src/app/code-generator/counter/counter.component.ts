@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {GeneratorService} from "../services/generator.service";
 
 @Component({
   selector: 'app-counter',
@@ -6,13 +7,18 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
-  private limit: number = 10
+  private readonly limit: number
 
   @Input()
   public number!: number;
 
   @Output()
   public onNewNumber: EventEmitter<number> = new EventEmitter<number>()
+
+  constructor(private generatorService: GeneratorService) {
+    this.limit = generatorService.limit
+  }
+
 
   public accumulate(value: number): void {
     if (this.number < 2) this.number = 2

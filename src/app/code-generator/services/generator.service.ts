@@ -13,6 +13,7 @@ export class GeneratorService {
   public settings2: string = ''
   public numberOfCodes: number = 1
   public lengthCode: number = 1
+  public limit: number = 3
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 91)
