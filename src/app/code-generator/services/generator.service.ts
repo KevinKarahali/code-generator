@@ -11,13 +11,13 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 2
-  public lengthCode: number = 5
+  public numberOfCodes: number = 50
+  public lengthCode: number = 1
 
   constructor() {
-    this.UpperCase_Char = GeneratorService.iterateArray(65, 90)
-    this.LowerCase_Char = GeneratorService.iterateArray(97, 122)
-    this.Number_Char = GeneratorService.iterateArray(48, 57)
+    this.UpperCase_Char = GeneratorService.iterateArray(65, 91)
+    this.LowerCase_Char = GeneratorService.iterateArray(97, 123)
+    this.Number_Char = GeneratorService.iterateArray(48, 58)
   }
 
   private static iterateArray(lowValue: number, highValue: number) {
