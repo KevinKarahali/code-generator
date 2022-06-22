@@ -35,11 +35,15 @@ export class GeneratorService {
     if (this.settings1 == "1") charCode = this.LowerCase_Char.concat(this.UpperCase_Char)
     if (this.settings1 == "2") charCode = this.Number_Char.concat(this.UpperCase_Char).concat(this.LowerCase_Char)
 
-    if (this.settings2 == "0") charCode = this.UpperCase_Char
-    if (this.settings2 == "1") charCode = this.LowerCase_Char
-    if (this.settings2 == "2") charCode = this.UpperCase_Char.concat(this.LowerCase_Char)
-    // if (includeUppercase) charCode = charCode.concat(this.UpperCase_Char)
-    // if (includeNumbers) charCode = charCode.concat(this.Number_Char)
+
+    if (this.settings1 == "1" && this.settings2 == "0") charCode = this.UpperCase_Char
+    if (this.settings1 == "1" && this.settings2 == "1") charCode = this.LowerCase_Char
+    if (this.settings1 == "1" && this.settings2 == "2") charCode = this.LowerCase_Char.concat(this.UpperCase_Char)
+
+    if (this.settings1 == "2" && this.settings2 == "0") charCode = this.Number_Char.concat(this.UpperCase_Char)
+    if (this.settings1 == "2" && this.settings2 == "1") charCode = this.Number_Char.concat(this.LowerCase_Char)
+    if (this.settings1 == "2" && this.settings2 == "2") charCode = this.Number_Char.concat(this.LowerCase_Char).concat(this.UpperCase_Char)
+
 
     let arrayCode: string[] = []
     for (let i = 0; i < numberOfCodes; i++) {
