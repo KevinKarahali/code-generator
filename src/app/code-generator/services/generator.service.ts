@@ -11,7 +11,7 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 50
+  public numberOfCodes: number = 1
   public lengthCode: number = 1
 
   constructor() {
