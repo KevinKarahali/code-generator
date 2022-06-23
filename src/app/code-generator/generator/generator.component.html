@@ -9,7 +9,9 @@
 
   <div class="container-generator">
     <p>Wählen Sie hier die Anzahl der Codes die Sie generieren möchten.</p>
-    <app-counter [number]="this.numberOfCodes" (onNewNumber)="getNumber($event)"></app-counter>
+    <app-counter [disableButton]="disableButton" [number]="this.numberOfCodes"
+                 (onNewNumber)="getNumber($event)"></app-counter>
+    <span *ngIf="disableButton">Limit erreicht</span>
     <h3>Konfigurieren Sie Ihren Code</h3>
     <p>Wählen Sie hier die Länge des Codes.</p>
     <app-counter [number]="lengthCode" (onNewNumber)="getLength($event)"></app-counter>

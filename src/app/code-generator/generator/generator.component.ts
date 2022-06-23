@@ -10,6 +10,7 @@ export class GeneratorComponent {
 
   public numberOfCodes: number;
   public lengthCode: number = 1;
+  disableButton: boolean = false;
 
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
@@ -20,6 +21,9 @@ export class GeneratorComponent {
     this.numberOfCodes = $event
     if ($event == this.generatorService.limit) {
       console.log("Limit erreicht")
+      this.disableButton = true
+    } else {
+      this.disableButton = false
     }
   }
 

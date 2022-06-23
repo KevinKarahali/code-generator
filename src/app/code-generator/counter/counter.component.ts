@@ -8,7 +8,8 @@ import {GeneratorService} from "../services/generator.service";
 })
 export class CounterComponent {
   private readonly limit: number
-  public disableButton: boolean = true
+  @Input()
+  public disableButton: boolean = false
 
   @Input()
   public number!: number;
