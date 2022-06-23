@@ -9,23 +9,30 @@ import {GeneratorService} from "../services/generator.service";
 export class GeneratorComponent {
 
   public numberOfCodes: number;
-  public lengthCode: number;
+  public lengthCode: number = 1;
 
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
-    this.lengthCode = generatorService.lengthCode
+    // this.lengthCode = generatorService.lengthCode
   }
 
   public getNumber($event: number) {
     this.numberOfCodes = $event
+    if ($event == this.generatorService.limit) {
+      console.log("Limit erreicht")
+    }
   }
 
   getLength($event: number) {
-    this.lengthCode = $event
+    // this.lengthCode = $event
+    this.generatorService.lengthCode = $event
+    this.generatorService.limitNumber()
+    // console.log(this.generatorService.lengthCode)
   }
 
   public generateCode(numberOfCodes: number, characterAmount: number) {
     this.generatorService.generateCode(numberOfCodes, characterAmount)
   }
+
 
 }

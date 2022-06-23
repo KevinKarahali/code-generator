@@ -11,15 +11,16 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 10
+  public numberOfCodes: number = 8
   public lengthCode: number = 1
-  public limit: number = 30
+  public limit: number = 3
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 91)
     this.LowerCase_Char = GeneratorService.iterateArray(97, 123)
     this.Number_Char = GeneratorService.iterateArray(48, 58)
   }
+
 
   private static iterateArray(lowValue: number, highValue: number) {
     const array = []
@@ -71,5 +72,12 @@ export class GeneratorService {
 
   public get codes(): string[] {
     return this._codes;
+  }
+
+  public limitNumber() {
+    if (this.settings1 == "0") this.limit = Math.pow(10, this.lengthCode)
+    if (this.settings1 == "1") this.limit = Math.pow(25, this.lengthCode)
+    if (this.settings1 == "2") this.limit = Math.pow(35, this.lengthCode)
+    console.log(this.limit)
   }
 }

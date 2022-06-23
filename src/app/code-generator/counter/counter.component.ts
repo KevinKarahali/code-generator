@@ -21,12 +21,12 @@ export class CounterComponent {
 
 
   public accumulate(value: number): void {
-    if (this.number < 2) this.number = 2
+    // if (this.number < 2) this.number = 2
 
     this.number += value
-    if (this.number > this.limit) {
-      this.number = this.limit
-    }
+    // if (this.number > this.limit) {
+    //   this.number = this.limit
+    // }
     this.onNewNumber.emit(this.number)
   }
 }

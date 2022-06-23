@@ -20,6 +20,8 @@ export class ConfiguratorComponent {
   config1ChangeHandler($event: any) {
     this.settings1 = $event.target.value
     this.generatorService.settings1 = $event.target.value
+    this.generatorService.limitNumber()
+    // console.log(this.generatorService.settings1)
   }
 
   config2ChangeHandler($event: any) {
