@@ -50,8 +50,13 @@
   margin-bottom: 1rem;
 }
 
-span {
+.limited {
   font-size: 0.9rem;
   color: red;
   margin-left: 3rem;
+}
+
+
+.guessing {
+  color: #267ff4;
 }

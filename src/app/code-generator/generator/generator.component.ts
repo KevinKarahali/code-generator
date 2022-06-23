@@ -32,8 +32,8 @@ export class GeneratorComponent implements OnInit {
   }
 
   private getGuessedProbability(numberOfCodes: number, maximalCodes: number) {
-    // this.guessedProbability = Math.round((numberOfCodes / maximalCodes) * 100)
-    this.guessedProbability = numberOfCodes / maximalCodes * 100
+    this.guessedProbability = Math.round((numberOfCodes / maximalCodes) * 100)
+    // this.guessedProbability = numberOfCodes / maximalCodes * 100
     // console.log(this.guessedProbability)
   }
 

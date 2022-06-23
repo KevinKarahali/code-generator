@@ -11,12 +11,14 @@
     <p>Wählen Sie hier die Anzahl der Codes die Sie generieren möchten.</p>
     <app-counter [disableButton]="disableButton" [number]="this.numberOfCodes"
                  (onNewNumber)="getNumber($event)"></app-counter>
-    <span *ngIf="disableButton">Limit erreicht</span>
+    <span class="limited" *ngIf="disableButton">Limit erreicht</span>
     <h3>Konfigurieren Sie Ihren Code</h3>
     <p>Wählen Sie hier die Länge des Codes.</p>
     <app-counter [number]="lengthCode" (onNewNumber)="getLength($event)"></app-counter>
     <app-configurator></app-configurator>
-    <h4>Die Konfigurierten Codes , könnten mit einer Wahrscheinlichkeit von {{guessedProbability}}% erraten werden</h4>
+    <h4>Die Konfigurierten Codes , könnten mit einer Wahrscheinlichkeit von <span
+      class="guessing"> {{guessedProbability}}%</span>
+      erraten werden</h4>
     <button (click)="generateCode(numberOfCodes,lengthCode)">Generieren</button>
   </div>
 </div>
