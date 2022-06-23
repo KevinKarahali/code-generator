@@ -12,7 +12,7 @@ export class GeneratorService {
   public settings1: string = ''
   public settings2: string = ''
   public numberOfCodes: number = 0
-  public lengthCode: number = 10
+  public lengthCode: number = 1
   public limit: number = 3
 
   constructor() {
@@ -63,25 +63,44 @@ export class GeneratorService {
     // this.addCodes(arrayCode)
     // console.log(codeSet)
 
+
     //for each number of codes generate a array of charCodes and join them togheter
-    let arrayCode: string[] = []
-    for (let i = 0; i < numberOfCodes; i++) {
-      let code: string[] = []
+    // let codeSet: Set<string> = new Set()
+    // while (codeSet.size < charCode.length) {
+    //   for (let i = 0; i < numberOfCodes; i++) {
+    //     let code: string[] = []
+    //     for (let i = 0; i < this.lengthCode; i++) {
+    //       const characterCode = charCode[Math.floor(Math.random() * charCode.length)]
+    //       code.push(String.fromCharCode(characterCode))
+    //     }
+    //     codeSet.add(code.join(''))
+    //   }
+    // }
+    // console.log(codeSet)
+    // this._codes = Array.from(codeSet)
+
+
+    let codeSet: Set<string> = new Set()
+    let counter = 0
+    while (codeSet.size < charCode.length) {
+      let code = ''
       for (let i = 0; i < this.lengthCode; i++) {
-        const characterCode = charCode[Math.floor(Math.random() * charCode.length)]
-        code.push(String.fromCharCode(characterCode))
+        code += String.fromCharCode(charCode[Math.floor(Math.random() * charCode.length)])
       }
-      arrayCode.push(code.join(''))
+      codeSet.add(code)
+      counter++
     }
-    this.addCodes(arrayCode)
+    console.log(codeSet)
+    this._codes = Array.from(codeSet).splice(0, numberOfCodes)
+
   }
 
-  private addCodes(code: string[]): void {
-    this._codes = [...new Set(code)]
-    console.log(this._codes)
-
-    // [...new Set(arrayCode)]
-  }
+  // private addCodes(code: string[]): void {
+  //   this._codes = [...new Set(code)]
+  //   console.log(this._codes)
+  //
+  //   // [...new Set(arrayCode)]
+  // }
 
   public get codes(): string[] {
     return this._codes;
@@ -91,7 +110,7 @@ export class GeneratorService {
     if (this.settings1 == "0") this.limit = Math.pow(10, this.lengthCode)
     if (this.settings1 == "1") this.limit = Math.pow(25, this.lengthCode)
     if (this.settings1 == "2") this.limit = Math.pow(35, this.lengthCode)
-    console.log(this.limit)
+    // console.log(this.limit)
   }
 
 }
