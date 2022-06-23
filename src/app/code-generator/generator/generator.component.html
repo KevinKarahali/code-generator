@@ -16,6 +16,7 @@
     <p>Wählen Sie hier die Länge des Codes.</p>
     <app-counter [number]="lengthCode" (onNewNumber)="getLength($event)"></app-counter>
     <app-configurator></app-configurator>
+    <h4>Die Konfigurierten Codes , könnten mit einer Wahrscheinlichkeit von {{guessedProbability}}% erraten werden</h4>
     <button (click)="generateCode(numberOfCodes,lengthCode)">Generieren</button>
   </div>
 </div>

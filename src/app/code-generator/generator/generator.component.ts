@@ -10,7 +10,9 @@ export class GeneratorComponent {
 
   public numberOfCodes: number;
   public lengthCode: number = 1;
-  disableButton: boolean = false;
+  public disableButton: boolean = false;
+  public guessedProbability: number = 0;
+
 
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
@@ -25,12 +27,22 @@ export class GeneratorComponent {
     } else {
       this.disableButton = false
     }
+    this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
+  }
+
+  private getGuessedProbability(numberOfCodes: number, maximalCodes: number) {
+    // this.guessedProbability = Math.round((numberOfCodes / maximalCodes) * 100)
+    this.guessedProbability = numberOfCodes / maximalCodes * 100
+    console.log(this.guessedProbability)
   }
 
   getLength($event: number) {
     // this.lengthCode = $event
     this.generatorService.lengthCode = $event
     this.generatorService.limitNumber()
+    //guess probability
+    this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
+
     // console.log(this.generatorService.lengthCode)
   }
 

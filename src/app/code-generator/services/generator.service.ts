@@ -80,4 +80,5 @@ export class GeneratorService {
     if (this.settings1 == "2") this.limit = Math.pow(35, this.lengthCode)
     console.log(this.limit)
   }
+
 }
