@@ -11,7 +11,7 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 8
+  public numberOfCodes: number = 0
   public lengthCode: number = 1
   public limit: number = 3
 
@@ -31,7 +31,8 @@ export class GeneratorService {
   }
 
   public generateCode(numberOfCodes: number, characterAmount: number) {
-    let charCode = this.LowerCase_Char
+    // let charCode = this.LowerCase_Char
+    let charCode = this.Number_Char
     if (this.settings1 == "0") charCode = this.Number_Char
     if (this.settings1 == "1") charCode = this.LowerCase_Char.concat(this.UpperCase_Char)
     if (this.settings1 == "2") charCode = this.Number_Char.concat(this.UpperCase_Char).concat(this.LowerCase_Char)

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GeneratorService} from "../services/generator.service";
 
 @Component({
@@ -6,7 +6,8 @@ import {GeneratorService} from "../services/generator.service";
   templateUrl: './generator.component.html',
   styleUrls: ['./generator.component.css']
 })
-export class GeneratorComponent {
+export class GeneratorComponent implements OnInit {
+
 
   public numberOfCodes: number;
   public lengthCode: number = 1;
@@ -33,7 +34,7 @@ export class GeneratorComponent {
   private getGuessedProbability(numberOfCodes: number, maximalCodes: number) {
     // this.guessedProbability = Math.round((numberOfCodes / maximalCodes) * 100)
     this.guessedProbability = numberOfCodes / maximalCodes * 100
-    console.log(this.guessedProbability)
+    // console.log(this.guessedProbability)
   }
 
   getLength($event: number) {
@@ -48,6 +49,11 @@ export class GeneratorComponent {
 
   public generateCode(numberOfCodes: number, characterAmount: number) {
     this.generatorService.generateCode(numberOfCodes, characterAmount)
+  }
+
+  ngOnInit(): void {
+    this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
+    this.generatorService.limitNumber()
   }
 
 
