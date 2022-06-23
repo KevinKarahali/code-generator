@@ -12,7 +12,7 @@ export class GeneratorService {
   public settings1: string = ''
   public settings2: string = ''
   public numberOfCodes: number = 0
-  public lengthCode: number = 1
+  public lengthCode: number = 10
   public limit: number = 3
 
   constructor() {
@@ -30,7 +30,7 @@ export class GeneratorService {
     return array
   }
 
-  public generateCode(numberOfCodes: number, characterAmount: number) {
+  public generateCode(numberOfCodes: number) {
     // let charCode = this.LowerCase_Char
     let charCode = this.Number_Char
     if (this.settings1 == "0") charCode = this.Number_Char
@@ -47,21 +47,33 @@ export class GeneratorService {
     if (this.settings1 == "2" && this.settings2 == "2") charCode = this.Number_Char.concat(this.LowerCase_Char).concat(this.UpperCase_Char)
 
 
-    let codeSet: Set<string> = new Set()
+    // let codeSet: Set<string> = new Set()
+    // let arrayCode: string[] = []
+    // for (let i = 0; i < numberOfCodes; i++) {
+    //   let code: string[] = []
+    //   for (let i = 0; i < characterAmount; i++) {
+    //     const characterCode = charCode[Math.floor(Math.random() * charCode.length)]
+    //     code.push(String.fromCharCode(characterCode))
+    //     console.log(code)
+    //   }
+    //   arrayCode.push(code.join(''))
+    //   codeSet.add(code.join(''))
+    //   console.log(codeSet.size)
+    // }
+    // this.addCodes(arrayCode)
+    // console.log(codeSet)
+
+    //for each number of codes generate a array of charCodes and join them togheter
     let arrayCode: string[] = []
     for (let i = 0; i < numberOfCodes; i++) {
       let code: string[] = []
-      for (let i = 0; i < characterAmount; i++) {
+      for (let i = 0; i < this.lengthCode; i++) {
         const characterCode = charCode[Math.floor(Math.random() * charCode.length)]
         code.push(String.fromCharCode(characterCode))
-        console.log(code)
       }
       arrayCode.push(code.join(''))
-      codeSet.add(code.join(''))
-      console.log(codeSet.size)
     }
     this.addCodes(arrayCode)
-    console.log(codeSet)
   }
 
   private addCodes(code: string[]): void {

@@ -47,8 +47,9 @@ export class GeneratorComponent implements OnInit {
     // console.log(this.generatorService.lengthCode)
   }
 
-  public generateCode(numberOfCodes: number, characterAmount: number) {
-    this.generatorService.generateCode(numberOfCodes, characterAmount)
+  public generateCode(numberOfCodes: number) {
+    this.generatorService.generateCode(numberOfCodes)
+    // console.log(characterAmount)
   }
 
   ngOnInit(): void {
