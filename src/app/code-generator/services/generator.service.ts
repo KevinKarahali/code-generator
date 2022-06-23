@@ -11,9 +11,9 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 0
+  public numberOfCodes: number = 1
   public lengthCode: number = 1
-  public limit: number = 3
+  public limit: number = 30
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 91)
@@ -82,7 +82,7 @@ export class GeneratorService {
 
     let codeSet: Set<string> = new Set()
     let counter = 0
-    while (codeSet.size < charCode.length) {
+    while (codeSet.size < numberOfCodes) {
       let code = ''
       for (let i = 0; i < this.lengthCode; i++) {
         code += String.fromCharCode(charCode[Math.floor(Math.random() * charCode.length)])
@@ -90,8 +90,10 @@ export class GeneratorService {
       codeSet.add(code)
       counter++
     }
-    console.log(codeSet)
+    // console.log(codeSet)
+    console.log(counter)
     this._codes = Array.from(codeSet).splice(0, numberOfCodes)
+    // this._codes = Array.from(codeSet)
 
   }
 
