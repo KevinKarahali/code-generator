@@ -1,5 +1,5 @@
 <div class="container">
   <button (click)="accumulate(-1)">-</button>
   <p>{{number}}</p>
-  <button (click)="accumulate(+1)">+</button>
+  <button [disabled]="disableButton" (click)="accumulate(+1)">+</button>
 </div>
