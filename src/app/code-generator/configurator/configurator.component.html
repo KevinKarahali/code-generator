@@ -2,16 +2,15 @@
 
   <div class="colum1">
     <div *ngFor="let value of config1; let index = index;" class="configElement">
-      <input type="radio" name="config1" value="{{index}}" (change)="config1ChangeHandler($event)"><i>{{value}}</i>
+      <input type="radio" name="config1" [id]="'option'+ index + 1" value="{{index}}"
+             (change)="config1ChangeHandler($event)"><label [for]=" 'option' + index +1 ">{{value}}</label>
     </div>
   </div>
 
   <div class="colum2">
     <div *ngFor="let value of config2; let index = index;" class="configElement">
-      <input type="radio" name="config2" value="{{index}}" (change)="config2ChangeHandler($event)"><i>{{value}}</i>
+      <input type="radio" name="config2" [id]="'option'+ index" value="{{index}}"
+             (change)="config2ChangeHandler($event)"><label [for]=" 'option' + index ">{{value}}</label>
     </div>
   </div>
-
 </div>
-<!--<h2>result1 : {{settings1}}</h2>-->
-<!--<h2>result2 : {{settings2}}</h2>-->
