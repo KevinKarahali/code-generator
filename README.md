@@ -1,4 +1,6 @@
 # GutsheinGenerator
+[ONLINE EXAMPLE](https://code-generator-504a1nzf5-kevinkarahali.vercel.app)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
