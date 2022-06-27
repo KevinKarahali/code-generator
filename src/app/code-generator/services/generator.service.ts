@@ -90,12 +90,45 @@ export class GeneratorService {
       codeSet.add(code)
       counter++
     }
-    // console.log(codeSet)
-    console.log(counter)
-    this._codes = Array.from(codeSet).splice(0, numberOfCodes)
-    // this._codes = Array.from(codeSet)
 
+    //conver the codesSet to an array
+
+
+    // console.log(codeSet)
+    // console.log(counter)
+    // this._codes = Array.from(codeSet).splice(0, numberOfCodes)
+    // console.log(this.insertTokenEveryN(this._codes, '-', 3, true))
+
+    // console.log(typeof (codeSet))
+    // this._codes[0][0].concat('-')
+    this._codes = Array.from(codeSet)
+    console.log(this._codes)
+    // console.log(this._codes[0][0].concat('-'))
+
+    // this._codes = this.insertTokenEveryN(this._codes, '-', 3, true)
+    // console.log(this._codes)
   }
+
+  //insert token every n elements
+
+  private insertTokenEveryN(arr: string[], token: string, times: number, fromEnd: boolean) {
+    // Clone the received array, so we don't mutate the
+    // original one. You can ignore this if you don't mind.
+
+    let a = arr.slice(0);
+
+    // Insert the <token> every <n> elements.
+
+    let idx = fromEnd ? a.length - times : times;
+
+    while ((fromEnd ? idx >= 1 : idx <= a.length)) {
+      a.splice(idx, 0, token);
+      idx = (fromEnd ? idx - times : idx + times + 1);
+    }
+
+    return a;
+  }
+
 
   // private addCodes(code: string[]): void {
   //   this._codes = [...new Set(code)]
