@@ -15,7 +15,7 @@ export class GeneratorComponent implements OnInit {
   public guessedProbability: number = 0;
   selectedOption: string = '';
   public options = ["-", "*", "/", "."]
-  public numberOption = 0;
+  public numberOption = 1;
 
 
   constructor(private generatorService: GeneratorService) {

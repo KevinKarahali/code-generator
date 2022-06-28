@@ -11,11 +11,11 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 8
+  public numberOfCodes: number = 10
   public lengthCode: number = 1
   public limit: number = 10
   public selectedOption: string = ''
-  public optionNumber = 0
+  public optionNumber = 1
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 91)
@@ -51,18 +51,34 @@ export class GeneratorService {
 
     let codeSet: Set<string> = new Set()
     let counter = 0
+    // let counter2 = 0
+    // let counter3 = this.numberOfCodes
     while (codeSet.size < numberOfCodes) {
       let code = ''
       for (let i = 0; i < this.lengthCode; i++) {
         code += String.fromCharCode(charCode[Math.floor(Math.random() * charCode.length)])
       }
+
+      // if (counter3 == numberOfCodes && counter2 == 10) {
+      //   counter3++
+      // }
+
       counter++
-      if (counter > 10000) {
+      // if (counter >= numberOfCodes) {
+      //   counter2++
+      // }
+      if (counter > 10000 + numberOfCodes) {
         console.log("Limit erreicht")
         break
       }
+
+      //count only when
+
       codeSet.add(code)
     }
+    console.log("counter1", counter)
+    // console.log("counter2", counter2)
+    // console.log("counter3", counter3)
 
     let codeArray: string[] = []
     codeSet.forEach(code => {
@@ -90,7 +106,7 @@ export class GeneratorService {
     if (this.settings1 == "1") this.limit = Math.pow(25, this.lengthCode)
     if (this.settings1 == "2") this.limit = Math.pow(35, this.lengthCode)
     console.log(this.limit)
-    console.log(this.lengthCode)
+    // console.log(this.lengthCode)
   }
 
   downloadCsv() {

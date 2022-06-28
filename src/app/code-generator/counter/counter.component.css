@@ -20,10 +20,10 @@
   cursor: default;
 }
 
-/*input {*/
-/*  width: 3rem;*/
-/*  text-align: center;*/
-/*  border: none;*/
-/*  background-color: #eeeeee;*/
-/*  padding: 0.5rem;*/
-/*}*/
+input {
+  width: 3rem;
+  text-align: center;
+  border: none;
+  background-color: #eeeeee;
+  padding: 0.5rem;
+}
