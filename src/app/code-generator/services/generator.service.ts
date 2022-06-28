@@ -11,9 +11,9 @@ export class GeneratorService {
   private readonly Number_Char: number[]
   public settings1: string = ''
   public settings2: string = ''
-  public numberOfCodes: number = 10
-  public lengthCode: number = 1
-  public limit: number = 10
+  public numberOfCodes: number = 8
+  public lengthCode: number = 8
+  public limit: number = 35
   public selectedOption: string = ''
   public optionNumber = 1
 

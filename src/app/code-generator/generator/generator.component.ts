@@ -20,7 +20,7 @@ export class GeneratorComponent implements OnInit {
 
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
-    // this.lengthCode = generatorService.lengthCode
+    this.lengthCode = generatorService.lengthCode
   }
 
   public selectOption() {

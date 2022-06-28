@@ -1,6 +1,6 @@
 <div class="container">
-  <button (click)="accumulate(-1)">-</button>
-  <p>{{number}}</p>
+  <button [disabled]="number <= 0" (click)="accumulate(-1)">-</button>
+<!--  <p>{{number}}</p>-->
+  <input [(ngModel)]="number" (change)="changeNumber()"/>
   <button [disabled]="disableButton" (click)="accumulate(+1)">+</button>
 </div>
-<input [(ngModel)]="number" (change)="changeNumber()"/>
