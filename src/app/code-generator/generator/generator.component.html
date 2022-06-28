@@ -19,13 +19,13 @@
     <h4>Die Konfigurierten Codes , könnten mit einer Wahrscheinlichkeit von <span
       class="guessing"> {{guessedProbability}}%</span>
       erraten werden</h4>
+    <div class="configurator">
+      <select name="select" [(ngModel)]="selectedOption" (change)="selectOption()">
+        <option *ngFor="let option of options" [value]="option">{{option}}</option>
+      </select>
+      <input type="number" [(ngModel)]="numberOption" (change)="changeNumber()">
+    </div>
     <button (click)="generateCode(numberOfCodes)">Generieren</button>
-  </div>
-  <div class="configurator">
-    <select name="select" [(ngModel)]="selectedOption" (change)="selectOption()">
-      <option *ngFor="let option of options" [value]="option">{{option}}</option>
-    </select>
-    <input type="number" [(ngModel)]="numberOption" (change)="changeNumber()">
   </div>
   <button class="btn_download" (click)="downloadCsv()">Herunterladen</button>
 </div>
