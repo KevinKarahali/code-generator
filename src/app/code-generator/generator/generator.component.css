@@ -60,3 +60,19 @@
 .guessing {
   color: #267ff4;
 }
+
+.configurator {
+  margin-top: 1rem;
+}
+
+.configurator input {
+  margin-left: 1rem;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.configurator select {
+  /*width: 5rem;*/
+  font-size: 1rem;
+}

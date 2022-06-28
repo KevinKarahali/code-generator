@@ -12,13 +12,16 @@ export class GeneratorService {
   public settings1: string = ''
   public settings2: string = ''
   public numberOfCodes: number = 8
-  public lengthCode: number = 8
+  public lengthCode: number = 1
   public limit: number = 10
+  public selectedOption: string = ''
+  public optionNumber = 0
 
   constructor() {
     this.UpperCase_Char = GeneratorService.iterateArray(65, 91)
     this.LowerCase_Char = GeneratorService.iterateArray(97, 123)
     this.Number_Char = GeneratorService.iterateArray(48, 58)
+
   }
 
 
@@ -67,13 +70,14 @@ export class GeneratorService {
         //insert "-" every 4th character except the first one
         let codeWithDash = code.substring(0, 1)
         for (let i = 1; i < code.length; i++) {
-          if (i % 2 == 0) codeWithDash += "-"
+          if (i % this.optionNumber == 0) codeWithDash += this.selectedOption
           codeWithDash += code.substring(i, i + 1)
         }
         codeArray.push(codeWithDash)
       }
     )
     console.log(codeArray)
+    console.log(this.optionNumber)
     this._codes = codeArray
 
 

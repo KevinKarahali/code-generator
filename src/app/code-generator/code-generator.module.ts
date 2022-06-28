@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {GeneratorComponent} from './generator/generator.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ListCodeComponent} from './list-code/list-code.component';
-import { CounterComponent } from './counter/counter.component';
-import { ConfiguratorComponent } from './configurator/configurator.component';
+import {CounterComponent} from './counter/counter.component';
+import {ConfiguratorComponent} from './configurator/configurator.component';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { ConfiguratorComponent } from './configurator/configurator.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CodeGeneratorModule {

@@ -21,18 +21,10 @@
       erraten werden</h4>
     <button (click)="generateCode(numberOfCodes)">Generieren</button>
   </div>
+  <div class="configurator">
+    <select name="select" [(ngModel)]="selectedOption" (change)="selectOption()">
+      <option *ngFor="let option of options" [value]="option">{{option}}</option>
+    </select>
+    <input type="number" [(ngModel)]="numberOption" (change)="changeNumber()">
+  </div>
 </div>
-<!--buscar la manera de pasar la informacion del formulario al servicio-->
-<form>
-  <label> Zeichen </label>
-  <select>
-    <option value="-"> -
-    </option>
-    <option value="*"> *
-    </option>
-    <option value="/"> /
-    </option>
-    <option value="."> .
-    </option>
-  </select>
-</form>

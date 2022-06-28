@@ -13,11 +13,19 @@ export class GeneratorComponent implements OnInit {
   public lengthCode: number = 1;
   public disableButton: boolean = false;
   public guessedProbability: number = 0;
+  selectedOption: string = '';
+  public options = ["-", "*", "/", "."]
+  public numberOption = 0;
 
 
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
     // this.lengthCode = generatorService.lengthCode
+  }
+
+  //send selecTectedOption to generatorService
+  public selectOption() {
+    this.generatorService.selectedOption = this.selectedOption
   }
 
   public getNumber($event: number) {
@@ -58,4 +66,7 @@ export class GeneratorComponent implements OnInit {
   }
 
 
+  changeNumber() {
+    this.generatorService.optionNumber = this.numberOption
+  }
 }
