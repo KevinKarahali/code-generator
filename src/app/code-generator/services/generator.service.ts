@@ -64,10 +64,8 @@ export class GeneratorService {
       codeSet.add(code)
     }
 
-    //add "-" to the beginning of the code
     let codeArray: string[] = []
     codeSet.forEach(code => {
-        //insert "-" every 4th character except the first one
         let codeWithDash = code.substring(0, 1)
         for (let i = 1; i < code.length; i++) {
           if (i % this.optionNumber == 0) codeWithDash += this.selectedOption
@@ -95,4 +93,14 @@ export class GeneratorService {
     console.log(this.lengthCode)
   }
 
+  downloadCsv() {
+    const csv = this._codes.join('\n')
+    const blob = new Blob([csv], {type: 'text/csv'})
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'codes.csv'
+    link.click()
+    window.URL.revokeObjectURL(url)
+  }
 }

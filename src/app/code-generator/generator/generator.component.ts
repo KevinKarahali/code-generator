@@ -69,4 +69,8 @@ export class GeneratorComponent implements OnInit {
   changeNumber() {
     this.generatorService.optionNumber = this.numberOption
   }
+
+  downloadCsv() {
+    this.generatorService.downloadCsv()
+  }
 }
