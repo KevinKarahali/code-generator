@@ -31,4 +31,8 @@ export class CounterComponent {
     // }
     this.onNewNumber.emit(this.number)
   }
+
+  changeNumber() {
+    this.onNewNumber.emit(this.number)
+  }
 }

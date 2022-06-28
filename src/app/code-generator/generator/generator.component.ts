@@ -23,7 +23,6 @@ export class GeneratorComponent implements OnInit {
     // this.lengthCode = generatorService.lengthCode
   }
 
-  //send selecTectedOption to generatorService
   public selectOption() {
     this.generatorService.selectedOption = this.selectedOption
   }

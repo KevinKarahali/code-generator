@@ -3,4 +3,6 @@
   <p>{{number}}</p>
   <button [disabled]="disableButton" (click)="accumulate(+1)">+</button>
 </div>
-<!--<input [(ngModel)]="number"/>-->
+<input [(ngModel)]="number" (change)="changeNumber()"/>
+
+<!--make a input and bind whit number and when change emit the number-->
