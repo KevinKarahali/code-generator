@@ -30,6 +30,10 @@ export class GeneratorComponent implements OnInit {
     // console.log('maximal number of codes', this.generatorService.limit)
   }
 
+  public get codes() {
+    return this.generatorService.codes
+  }
+
   public selectOption() {
     this.generatorService.selectedOption = this.selectedOption
   }

@@ -21,7 +21,6 @@ export class ConfiguratorComponent implements OnInit {
     this.settings1 = $event.target.value
     this.generatorService.settings1 = $event.target.value
     this.generatorService.limitNumber()
-    // console.log(this.generatorService.settings1)
   }
 
   config2ChangeHandler($event: any) {
@@ -32,7 +31,7 @@ export class ConfiguratorComponent implements OnInit {
   ngOnInit(): void {
     //click the settings1
     this.generatorService.settings1 = "2"
-    this.generatorService.settings2= "2"
+    this.generatorService.settings2 = "2"
 
   }
 }

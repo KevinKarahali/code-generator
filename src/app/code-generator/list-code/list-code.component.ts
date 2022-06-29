@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {GeneratorService} from "../services/generator.service";
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-list-code',
@@ -7,12 +6,12 @@ import {GeneratorService} from "../services/generator.service";
   styleUrls: ['./list-code.component.css']
 })
 export class ListCodeComponent {
+  @Input()
+  public codes: string[] = []
 
 
-  constructor(private generatorService: GeneratorService) {
+  // return this.generatorService.codes
+  constructor() {
   }
 
-  public get codes() {
-    return this.generatorService.codes
-  }
 }

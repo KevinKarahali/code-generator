@@ -87,3 +87,9 @@
   font-size: 1rem;
   cursor: pointer;
 }
+
+.list_container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
