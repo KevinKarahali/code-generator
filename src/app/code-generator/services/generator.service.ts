@@ -90,8 +90,8 @@ export class GeneratorService {
         codeArray.push(codeWithDash)
       }
     )
-    console.log(codeArray)
-    console.log(this.optionNumber)
+    // console.log(codeArray)
+    // console.log(this.optionNumber)
     this._codes = codeArray
 
 

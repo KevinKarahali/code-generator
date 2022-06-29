@@ -32,7 +32,8 @@ export class GeneratorComponent implements OnInit {
     if ($event == this.generatorService.limit) {
       console.log("Limit erreicht")
       this.disableButton = true
-    } else {
+    }
+    if ($event != this.generatorService.limit) {
       this.disableButton = false
     }
     this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
@@ -40,23 +41,23 @@ export class GeneratorComponent implements OnInit {
 
   private getGuessedProbability(numberOfCodes: number, maximalCodes: number) {
     this.guessedProbability = Math.round((numberOfCodes / maximalCodes) * 100)
-    // this.guessedProbability = numberOfCodes / maximalCodes * 100
-    // console.log(this.guessedProbability)
   }
 
   getLength($event: number) {
-    // this.lengthCode = $event
+    if ($event == this.generatorService.limit) {
+      console.log("Limit erreicht")
+      this.disableButton = true
+    }
+    if ($event != this.generatorService.limit) {
+      this.disableButton = false
+    }
     this.generatorService.lengthCode = $event
     this.generatorService.limitNumber()
-    //guess probability
     this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
-
-    // console.log(this.generatorService.lengthCode)
   }
 
   public generateCode(numberOfCodes: number) {
     this.generatorService.generateCode(numberOfCodes)
-    // console.log(characterAmount)
   }
 
   ngOnInit(): void {
