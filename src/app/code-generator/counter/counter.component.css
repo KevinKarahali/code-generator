@@ -6,12 +6,19 @@
 
 .container button, p {
   /*background-color: #cbcbcb;*/
-  background-color: #eeeeee;
-  border: none;
-  cursor: pointer;
-  margin: 0.1rem;
+  /*background-color: #eeeeee;*/
+  /*border: none;*/
+  /*cursor: pointer;*/
+  /*margin: 0.1rem;*/
   padding: 0.5rem 0.7rem 0.5rem;
-  color: black;
+  /*color: black;*/
+  background-color: #267ff4;
+  border: none;
+  border-radius: 0.5rem;
+  /*margin-top: 2rem;*/
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .container p {
@@ -26,4 +33,6 @@ input {
   border: none;
   background-color: #eeeeee;
   padding: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }

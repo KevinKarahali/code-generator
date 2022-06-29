@@ -65,16 +65,25 @@
   margin-top: 1rem;
 }
 
-.configurator input {
-  margin-left: 1rem;
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
 .configurator select {
   /*width: 5rem;*/
   font-size: 1rem;
+  width: 3rem;
+  text-align: center;
+  border: none;
+  background-color: #eeeeee;
+  padding: 0.5rem;
+
+}
+
+.configurator input {
+  margin-left: 1rem;
+  font-size: 1rem;
+  width: 3rem;
+  text-align: center;
+  border: none;
+  background-color: #eeeeee;
+  padding: 0.5rem;
 }
 
 .btn_download {
@@ -93,3 +102,4 @@
   flex-flow: column;
   align-items: center;
 }
+
