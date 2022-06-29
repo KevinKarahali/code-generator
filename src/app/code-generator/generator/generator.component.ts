@@ -21,6 +21,11 @@ export class GeneratorComponent implements OnInit {
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
     this.lengthCode = generatorService.lengthCode
+    this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
+    // console.log(this.guessedProbability)
+    // console.log('number of codes', this.numberOfCodes)
+    // console.log('length', this.lengthCode)
+    // console.log('maximal number of codes', this.generatorService.limit)
   }
 
   public selectOption() {
@@ -61,8 +66,11 @@ export class GeneratorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
+    // console.log('number of codes', this.numberOfCodes)
+    // console.log('length', this.lengthCode)
+    // console.log('maximal number of codes', this.generatorService.limit)
     this.generatorService.limitNumber()
+    this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
   }
 
 
