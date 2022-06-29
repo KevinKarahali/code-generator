@@ -8,6 +8,7 @@ import {GeneratorService} from "../services/generator.service";
 })
 export class ListCodeComponent {
 
+
   constructor(private generatorService: GeneratorService) {
   }
 

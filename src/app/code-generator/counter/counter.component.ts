@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {GeneratorService} from "../services/generator.service";
 
 @Component({
   selector: 'app-counter',
@@ -7,28 +6,24 @@ import {GeneratorService} from "../services/generator.service";
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnChanges {
-  private readonly limit: number
   @Input()
   public disableButton: boolean = false
 
   @Input()
   public number!: number;
 
+  @Input()
+  public limit: number = 0
+
   @Output()
   public onNewNumber: EventEmitter<number> = new EventEmitter<number>()
 
-  constructor(private generatorService: GeneratorService) {
-    this.limit = generatorService.limit
+  constructor() {
   }
 
 
   public accumulate(value: number): void {
-    // if (this.number < 2) this.number = 2
-
     this.number = +this.number + value
-    // if (this.number > this.limit) {
-    //   this.number = this.limit
-    // }
     this.onNewNumber.emit(this.number)
   }
 

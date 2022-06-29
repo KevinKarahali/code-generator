@@ -16,12 +16,14 @@ export class GeneratorComponent implements OnInit {
   selectedOption: string = '';
   public options = ["-", "*", "/", "."]
   public numberOption = 1;
+  public limit: number = 0
 
 
   constructor(private generatorService: GeneratorService) {
     this.numberOfCodes = generatorService.numberOfCodes
     this.lengthCode = generatorService.lengthCode
     this.getGuessedProbability(this.numberOfCodes, this.generatorService.limit)
+    this.limit = generatorService.limit
     // console.log(this.guessedProbability)
     // console.log('number of codes', this.numberOfCodes)
     // console.log('length', this.lengthCode)
