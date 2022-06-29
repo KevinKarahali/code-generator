@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {GeneratorService} from "../services/generator.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {GeneratorService} from "../services/generator.service";
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })
-export class CounterComponent {
+export class CounterComponent implements OnChanges {
   private readonly limit: number
   @Input()
   public disableButton: boolean = false
@@ -34,5 +34,20 @@ export class CounterComponent {
 
   changeNumber() {
     this.onNewNumber.emit(this.number)
+    //don't allow to change the number to a negative number
+    if (this.number < 1) {
+      this.number = 1
+    }
+    //don't allow characters
+    if (isNaN(this.number)) {
+      this.number = 1
+    }
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.number < 1) {
+      this.number = 1
+    }
   }
 }

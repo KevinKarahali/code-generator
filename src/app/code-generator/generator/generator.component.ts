@@ -73,4 +73,5 @@ export class GeneratorComponent implements OnInit {
   downloadCsv() {
     this.generatorService.downloadCsv()
   }
+
 }
