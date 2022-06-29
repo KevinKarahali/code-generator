@@ -106,7 +106,7 @@ export class GeneratorService {
     if (this.settings1 == "0") this.limit = Math.pow(10, this.lengthCode)
     if (this.settings1 == "1") this.limit = Math.pow(25, this.lengthCode)
     if (this.settings1 == "2") this.limit = Math.pow(35, this.lengthCode)
-    console.log('service limit', this.limit)
+    // console.log('service limit', this.limit)
     // console.log(this.lengthCode)
   }
 
